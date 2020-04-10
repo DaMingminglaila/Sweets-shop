@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product_listing_page</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src='../js/vue.js'></script>
+</head>
+
+<body>
+  <!-- 顶部导航 -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+                Star's Sweet Shop</a>
+          </div>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="#" onclick="window.location='../home.html'">
+                    <span class=" glyphicon glyphicon-home" aria-hidden="true"></span>
+                    Home Page</a></li>
+  
+                  <li><a href="#" onclick="window.location='listing.html'">
+                    <span class=" glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    Product Listing Page</a></li>
+          <!-- 下拉菜单的实现，由Dropdown按钮和下拉的内容组成 -->
+                  <li class="dropdown">
+            <!-- 具体Dropdown按钮的实现：通过对超链接a设置class和data-toggle实现 -->
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                        New Products
+             <!-- span这里是小按钮的一个图标-->
+             <span class="caret"></span></a>
+             <!-- 下拉菜单的具体内容由列表实现，只需要对下拉菜单定义相应的class和role-->
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="#" onclick="window.location='../home.html'">Blueberry Cake</a></li>
+              <!-- 分割线通过divider来实现 -->
+              <li class="divider"></li>
+                          <li><a href="#" onclick="window.location='../home.html'">Mango Ice-cream</a></li>
+                          <li><a href="#" onclick="window.location='../home.html'">Cheese Cake</a></li>
+                          <li><a href="#" onclick="window.location='../home.html'">Cream Puff</a></li>
+                          <li><a href="#" onclick="window.location='../home.html'">Bear Chocolate</a></li>
+                      </ul>
+                  </li>
+          
+          <!-- 注意，当写好弹出框的代码内容后，要在这里进行对应，即将“关于”超链接的data-toggle设置
+          为弹出框组件的modal,将data-target的值设置为对应的id值-->
+                  <li><a href="#" data-toggle="modal" data-target="#about-modal">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    About Us</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <hr class="feature-divider">
+  <div>
+ <p id="best">Welcome everyone ! Items of Best sellers</p> 
+</div>
+ <hr class="feature-divider">
+
+
+
+<!-- 主要内容 -->
+<div class="container summary" id="items">
+<div class="wrapper">
+ <h2 class="feature-heading">Choose what you want <span class="text-muted">you can search price and title of sweets
+ </span></h2>
+  <!-- filter -->
+  <div class="filter">
+    
+    <input class="a" type="number" v-model="price" style="padding-left:5%" placeholder="Please input the price you wanna search">
+    <!-- <div  class="search-icon"></div> -->
+    <input class="b" type="text" v-model="keyword" style="padding-left:5%"  placeholder="Please input the title you wanna search">
+   </div>
+  </div>
+  <hr class="feature-divider">
+
+  <div v-for="item in items">
+    <!--items -->
+    <div class="row" id="summary-container"
+         v-on:click="handleClick($event,item.id)">
+        <div class="col-sm-4 imgurl">
+            <img class="img-circle" :src="item.imgUrl" :alt="item.title">
+        </div>
+        <div class="col-sm-8 title and desc">
+          <div class="row" id="summary-container content"> 
+            <div class="col-sm-5" id="price">
+              <h4>
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                Title: <span id="Cheese">{{item.title}}</span>
+              </h4></div>
+
+            <div class="col-sm-6.7 col-sm-offset-0.3 Creation_Date" id="Creation_Date">
+              <h4>
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                Description: <span id="Cheese" class="textDesc">{{item.desc}}</span>
+              </h4>
+            </div>
+             <!-- for space -->
+          <div class="hidden-xs" id="zhanwei"></div>
+          <div class="hidden-xs" id="zhanwei"></div>
+
+          </div>
+          <div class="row" id="summary-container price"> 
+            <div class="col-sm-5" id="price">
+              <h4>
+              <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+              Price: <span id="Cheese">{{item.price}}</span>
+            </h4>
+          </div>
+
+            <div class="col-sm-6.7 col-sm-offset-0.3 Creation_Date" id="Creation_Date">
+              <h4>
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                Creation_Date: 
+                <span id="Cheese">{{item.createdOn}}</span>
+              </h4>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <hr class="feature-divider">
+  </div>
+</div>
+
+
+     <!-- 弹出框（模态框），关于 。
+	需要注意的是，无论弹出框是从哪里弹出，代码是要放在body中的，可以放在body底部的script标签上面，
+	防止弹出框被影响-->
+  <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+  aria-hidden="true">
+ <div class="modal-dialog">
+     <div class="modal-content">
+         <!--以上的三个div就是一个层层包裹，表示弹出框，弹出框的对话，弹出框的内容 -->
+ <!-- 弹出框的头部，也就是弹出框的标题 -->
+         <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal"><span
+                     aria-hidden="true">&times;</span><span class="sr-only">close</span></button>
+             <h4 class="modal-title" id="modal-label">About us</h4>
+         </div>
+ <!-- 弹出框的内容 -->
+         <div class="modal-body">
+             <p>   This is a dessert website. In the future, I hope to open this lovely store with my sister in our leisure time, 
+               give a wonderful experience to those who like to eat sweets, and give them a fairy tale atmosphere</p>
+         </div>
+ <!-- 弹出框的底部 ，也就是弹出框的底下的按钮-->
+         <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">understand</button>
+         </div>
+     </div>
+ </div>
+</div>
+
+<footer>
+  <p id="best">To be continued</p> 
+</footer>
+
+
+
+<script>
+  let app=new Vue({
+    el:"#items",
+    data:{
+      items:[],
+      itemsB:[],
+      keyword:'',
+      price:''
+    },
+    created: function() {
+    // Assign initial values to this.allItems and this.items
+    let ITEMS=[{"id":1, "title":"Cheese Cake","desc":"Cheese cake refers to the cake made of cheese as the main milk","price":8.8,"imgUrl":"../images/1.jpg","createdOn":"2020-3-25 12:30:36"},
+             {"id":2, "title":"Chocolate Ice-cream","desc":"Sweet and juicy,soft, with rich nutrition","price":9.6,"imgUrl":"../images/2.jpg","createdOn":"2020-3-25 12:40:57"},
+             {"id":3, "title":"Blueberry Cake","desc":"blueberry cake is full of blueberry flavor, both sweet and fresh","price":30,"imgUrl":"../images/3.jpg","createdOn":"2020-3-25 14:48:43"},
+             {"id":4, "title":"Strawberry&Durian Sorbet","desc":"Full of strawberry and durian flesh, perfect match with cake","price":45,"imgUrl":"../images/4.jpg","createdOn":"2020-3-25 15:56:21"},
+             {"id":5, "title":"Mango Sorbet","desc":"Mango and smoothie blend, refreshing","price":26,"imgUrl":"../images/5.jpg","createdOn":"2020-3-25 17:12:09"}]
+    
+    Object.assign(this.items,ITEMS)
+    Object.assign(this.itemsB,ITEMS)
+   
+  },
+  watch:{
+    keyword(){
+      if(this.price=='' && this.keyword==""){
+        Object.assign(this.items,this.itemsB)
+      }else{
+        const result=[]
+        this.itemsB.forEach((value)=>{
+          if((value.title.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1 && value.price>=this.price)){
+            result.push(value)
+          }
+        })
+      this.items=result
+      }
+    },
+   
+    price(){
+      if(this.price=='' && this.keyword==""){
+        Object.assign(this.items,this.itemsB)
+      }else{
+        const result=[]
+        this.itemsB.forEach((value)=>{
+          if((value.title.toLowerCase().indexOf(this.keyword.toLowerCase()) > -1 && value.price>=this.price)){
+            result.push(value)
+          }
+        })
+      this.items=result
+      }
+      },
+    },
+    methods: {
+    handleClick:function(e,one){
+      window.alert("The id of this product is:" + one)
+      }
+    } 
+  }) 
+</script>
+
+
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/function.js"></script>
+</body>
+</html>

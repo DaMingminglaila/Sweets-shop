@@ -1,0 +1,196 @@
+
+        body {
+          padding-top: 50px;
+    /* 为body元素留出底部的间距 */
+          padding-bottom: 40px;
+          color: #5a5a5a;
+      }
+
+      /* 轮播广告 */
+
+      .carousel {
+          height: 500px;
+    /*让轮播图和下面的三栏分布有一些间距 */
+    margin-bottom: 60px;
+      }
+
+      .carousel .item {
+          height: 500px;
+          background-color: #000;
+      }
+      /* 图片自动缩放，填满广告 */
+      .carousel .item img {
+          width: 100%;
+      }
+
+      .carousel-caption {
+          z-index: 10;
+      }
+
+      .carousel-caption p {
+          margin-bottom: 20px;
+          font-size: 20px;
+          line-height: 1.8;
+      }
+
+      /* 简介 */
+
+      .summary {
+          padding-right: 15px;
+          padding-left: 15px;
+      }
+
+      .summary .col-sm-4 {
+        /* margin-top: 30px; */
+    /* 注意text-align可以具体实现哪些居中对齐 */
+          text-align: center;
+      }
+      #title{
+        margin-top: 40px;
+        
+      }
+      #zhanwei{
+        height:20px;
+      }
+
+      /* 特性 */
+
+      .feature-divider {
+    /* 给分割线上下都设置间距 */
+          margin: 40px 0;
+      }
+
+      /* 标签页 */
+      .feature {
+         /*设置上下间距 */
+    padding: 30px 0;
+      }
+      /* 为标题设置样式 */
+      .feature-heading {
+          font-size: 50px;
+          color: #2a6496;
+      }
+      /* 为副标题设置样式 */
+      .feature-heading .text-muted {
+          font-size: 28px;
+      }
+     /* 为甜品字体设置颜色 */
+     @font-face
+    {
+      font-family: myFirstFont;
+     src: url('../fonts/Anglia Script.ttf')
+     ,url('../fonts/Anglia Script.ttf'); /* IE9+ */
+    }
+    #best{
+      font-family:myFirstFont;
+      font-size:88px;
+      text-align: center;
+      color: #930000;
+    }
+     #Cheese{
+       
+       color:#FFD700;
+       text-shadow: 12px 12px 12px #F0E68C;
+     }
+     .textDesc{
+      display:inline-block;
+      width:293px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+     }
+     .textDesc:hover{
+      /* width:auto; */
+      overflow: auto;
+      text-overflow:clip;
+      white-space:normal;
+     }
+    #black{
+      color:black;
+    }
+
+h2.feature-heading{
+  margin-left:20px;
+  margin-top:5px;
+  padding-top: 0px;
+}
+
+.wrapper{
+  padding-top:0px;
+}
+    /* for filter */
+    .filter{
+      box-sizing: border-box;
+      width: 100%;
+      height: 130px;
+      padding: 0 .1rem;
+      text-align: center;
+      position:relative;  
+    }
+  
+    input{
+      box-sizing: border-box;
+      border: solid 1px #E5E5E5;
+      width: 35%;
+      height:35px;
+      border-radius: 50px;
+      outline:none;
+      position:absolute;
+      top:50%;
+      margin-top:-15px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+      -webkit-box-shadow: rgba(97, 67, 67, 0.1) 0px 0px 10px;
+    }
+    input:hover{
+      border:solid 2px #930000;
+      
+    }
+    .a{  
+      left:8%;
+   }
+
+    .b{  
+      left:50%;
+    }
+      /* 响应式布局 */
+
+      @media (max-width: 768px) {
+
+          .summary {
+              padding-right: 3px;
+              padding-left: 3px;
+          }
+
+          .carousel {
+              height: 300px;
+              margin-bottom: 30px;
+          }
+
+          .carousel .item {
+              height: 300px;
+          }
+
+          .carousel img {
+              min-height: 300px;
+          }
+
+          .carousel-caption p {
+              font-size: 16px;
+              line-height: 1.4;
+          }
+
+          .feature-heading {
+              font-size: 34px;
+          }
+
+          .feature-heading .text-muted {
+              font-size: 22px;
+          }
+      }
+
+      @media (min-width: 992px) {
+          .feature-heading {
+              margin-top: 120px;
+          }
+      }

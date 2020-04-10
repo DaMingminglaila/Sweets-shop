@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Xingzhi's Sweets Shop</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+              Star's Sweet Shop</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#ad-carousel">
+                  <span class=" glyphicon glyphicon-home" aria-hidden="true"></span>
+                 
+                  Home Page</a></li>
+
+                <li><a href="#" onclick="window.location='html/listing.html'">
+                  <span class=" glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                  Product Listing Page</a></li>
+				<!-- 下拉菜单的实现，由Dropdown按钮和下拉的内容组成 -->
+                <li class="dropdown">
+					<!-- 具体Dropdown按钮的实现：通过对超链接a设置class和data-toggle实现 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                      New Products
+					 <!-- span这里是小按钮的一个图标-->
+					           <span class="caret"></span></a>
+					 <!-- 下拉菜单的具体内容由列表实现，只需要对下拉菜单定义相应的class和role-->
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#feature-tab" data-tab="tab-Pumpkin">Pumpkin layer pie</a></li>
+						<!-- 分割线通过divider来实现 -->
+						            <li class="divider"></li>
+                        <li><a href="#feature-tab" data-tab="tab-Blueberry">Blueberry cake</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-Durian">Durian Sorbet</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-Cheese">Cheese cake</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-Matcha">Matcha red bean Sorbet</a></li>
+                    </ul>
+                </li>
+				
+				<!-- 注意，当写好弹出框的代码内容后，要在这里进行对应，即将“关于”超链接的data-toggle设置
+				为弹出框组件的modal,将data-target的值设置为对应的id值-->
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                  About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- 广告轮播 -->
+<div id="ad-carousel" class="carousel slide hidden-xs" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+        <li data-target="#ad-carousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/lunbo1.jpg" alt="1 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 id="black">Candy</h1>
+
+                    <p id="black">Sweet harbor, sweet life~</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/lunbo2.jpg" alt="2 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 id="black">Cake</h1>
+
+                    <p id="black">same sweet and different taste~</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/lunbo3.jpg" alt="3 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Chocolate</h1>
+
+                    <p>As if the sun is shining, warm and fresh~</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/lunbo4.png" alt="4 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 id="black">Bread</h1>
+
+                    <p id="black">With the breath and aftertaste of fairy tales~</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/lunbo5.png" alt="5 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1 id="black">Puff</h1>
+
+                    <p id="black">Feeling of rolling in the clouds~</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+<hr class="feature-divider">
+
+<!-- 主要内容 -->
+<div class="container summary">
+<p id="best">Summer Sorbet</p> 
+
+    <!-- 简介 -->
+    <div class="row" id="summary-container">
+        <div class="col-sm-4">
+            <img class="img-circle" src="images/ice1.jpg" alt="Summer Sorbet~">
+
+            <h2>Mango Sorbet</h2>
+
+            <p>Gladdening the heart and refreshing the mind~ Yeah</p>
+            <p>Tips:Half price of the second cup!</p>
+
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle" src="images/ice2.jpg" alt="Blueberry Sorbet">
+
+            <h2>Blueberry Sorbet</h2>
+
+            <p>Fragrant and sweet, brings endless delicious taste~ </p>
+            <p>Tips:Half price of the second cup!</p>
+        </div>
+        <div class="col-sm-4">
+            <img class="img-circle" src="images/ice3.jpg" alt="Strawberry Sorbet">
+
+            <h2>Strawberry Sorbet</h2>
+
+            <p>Can't be lack of strawberry,sends out infinite charm~</p>
+            <p>Tips:Half price of the second cup!</p>
+            
+        </div>
+    </div>
+
+    <!-- 特性 -->
+    <!-- hr标签可以用来作为分割线，放在container中就不会横穿整个页面 -->
+    <hr class="feature-divider">
+    
+	<!-- 标签页，标签页的基本结构的内容分为标签和标签页的内容 -->
+	
+	<!-- 标签 -->
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-Pumpkin" role="tab" data-toggle="tab">Pumpkin layer pie</a></li>
+        <li><a href="#tab-Blueberry" role="tab" data-toggle="tab">Blueberry cake</a></li>
+        <li><a href="#tab-Durian" role="tab" data-toggle="tab">Durian Sorbet</a></li>
+        <li><a href="#tab-Cheese" role="tab" data-toggle="tab">Cheese cake</a></li>
+        <li><a href="#tab-Matcha" role="tab" data-toggle="tab">Matcha red bean Sorbet </a></li>
+    </ul>
+    
+	<!--对应每个标签，打开对应哪些内容呢，就是标签页的内容，给放置具体对应内容的div设置class为tab-pane
+	，然后前面标签a的href的值对应每一个div设置class为tab-pane的id值-->
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-Pumpkin">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Pumpkin layer pie <span
+                            class="text-muted">pure and aromatic</span></h2>
+
+                    <p class="lead">Pumpkin pie is a festival food for Halloween, especially in America. Pumpkin pie is a traditional home-made snack from late autumn to early winter in the south of the United States. 
+                      It is usually eaten, especially around the Halloween, and becomes a kind of food for the occasion.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/product1.jpg"
+                         alt="Pumpkin layer pie">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="tab-Blueberry">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/product2.jpg"
+                         alt="blueberry">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Blueberry cake <span class="text-muted">Sweet and juicy</span>
+                    </h2>
+
+                    <p class="lead">A delicious dessert with blueberry flavor. Ingredients: 2-3 pieces of flying cake, appropriate ingredients of blueberry sauce: egg liquid, cooking oil practice: 1. Prepare blueberry sauce and flying cake skin.
+                       2. Take one of the flying cakes and cut them in half.
+                        3. Add some blueberry sauce to the center of the pie. 
+                        4. Cover the other half of the pie. 
+                        5. Press the fork along the outer edge of the crust to make the two layers sticky</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-Durian">
+            <div class="row feature">
+				<!-- 栅格布局实现左右图片和内容做分布 -->
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Durian Sorbet <span class="text-muted">like rolling in the cloud</span></h2>
+
+                    <p class="lead">Durian is one of the famous tropical fruits, native to Malaysia. Some countries in Southeast Asia grow more, Thailand is the most. It is also planted in Guangdong and Hainan of China. 
+                      Durian is the most famous in Thailand, known as the "king of fruits".It is suitable for doing Sorbet!</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/product3.jpg"
+                         alt="durian">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-Cheese">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/product4.jpg"
+                         alt="cheese">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Cheese cake <span class="text-muted">soft, with rich nutrition</span>
+                    </h2>
+
+                    <p class="lead">Cheese cake refers to the cake made of cheese as the main milk. Cheese, also known as cheese and cheese, refers to the concentrated dairy products made of animal milk which is fermented by Lactobacillus or coagulated after adding enzyme, and the whey is removed.
+                       Cheese itself is mainly composed of protein, lipid and other nutrients, just like milk.</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-Matcha">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Matcha red bean Sorbet <span class="text-muted">Fresh</span></h2>
+
+                    <p class="lead">Matcha tea is the tender leaves of spring tea. After steam curing, it is ground into powder with natural stone mill. 
+                      Red beans are very fragrant to relieve summer heat. It's very suitable to eat smoothie in summer!</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/product5.jpg"
+                         alt="m&r&b">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 弹出框（模态框），关于 。
+	需要注意的是，无论弹出框是从哪里弹出，代码是要放在body中的，可以放在body底部的script标签上面，
+	防止弹出框被影响-->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--以上的三个div就是一个层层包裹，表示弹出框，弹出框的对话，弹出框的内容 -->
+				<!-- 弹出框的头部，也就是弹出框的标题 -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">close</span></button>
+                    <h4 class="modal-title" id="modal-label">About us</h4>
+                </div>
+				<!-- 弹出框的内容 -->
+                <div class="modal-body">
+                    <p>   This is a dessert website. In the future, I hope to open this lovely store with my sister in our leisure time, 
+                      give a wonderful experience to those who like to eat sweets, and give them a fairy tale atmosphere</p>
+                </div>
+				<!-- 弹出框的底部 ，也就是弹出框的底下的按钮-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+		<!-- p的class设置为pull-right,因为p是块级元素，然后想要一个p元素和其他元素位于同一行中，那么
+		 就需要给p增加class,这仍然是Bootstrap中p元素需要注意的调用库-->
+        <p class="pull-right"><a href="#top">Go back to top</a></p>
+
+    </footer>
+
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/function.js"></script>
+</body>
+</html>
